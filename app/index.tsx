@@ -15,7 +15,7 @@ export default function Index() {
     <View style={styles.container}>
       {/* Blurred background */}
       <ImageBackground
-        source={require("../../assets/images/main-bg.png")}
+        source={require("../assets/images/main-bg.png")}
         style={StyleSheet.absoluteFill}
         resizeMode="cover"
         blurRadius={30}
@@ -26,7 +26,7 @@ export default function Index() {
 
       {/* Sharp foreground */}
       <ImageBackground
-        source={require("../../assets/images/main-bg.png")}
+        source={require("../assets/images/main-bg.png")}
         style={styles.foreground}
         resizeMode="contain"
       >
@@ -37,7 +37,7 @@ export default function Index() {
         >
           <TouchableOpacity
             style={styles.button}
-            onPress={() => router.push("/explore")}
+            onPress={() => router.replace("/menu")}
             activeOpacity={0.8}
           >
             <Text style={styles.buttonText}>PLAY</Text>
@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#000",
+    overflow: "hidden",
+
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
@@ -63,6 +65,8 @@ const styles = StyleSheet.create({
     height: "100%",
     alignItems: "center",
     justifyContent: "center",
+    overflow: "hidden",
+
   },
 
   /** Gradient border */
