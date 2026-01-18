@@ -16,10 +16,29 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="menu" />
+      <Stack
+        screenOptions={{
+          headerShown: false,    
+
+          animation: "fade",
+          animationDuration: 250,
+
+          contentStyle: {
+            backgroundColor: "black",
+          },
+        }}
+      >
+        <Stack.Screen
+          name="index"
+          options={{ animation: "fade", animationDuration: 300 }}
+        />
+
+        <Stack.Screen
+          name="menu"
+          options={{ animation: "slide_from_left", gestureEnabled: false, animationDuration: 500 }}
+        />
       </Stack>
+
       <StatusBar hidden />
     </ThemeProvider>
   );

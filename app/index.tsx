@@ -37,7 +37,7 @@ export default function Index() {
         >
           <TouchableOpacity
             style={styles.button}
-            onPress={() => router.replace("/menu")}
+            onPress={() => router.push("/menu")}
             activeOpacity={0.8}
           >
             <Text style={styles.buttonText}>PLAY</Text>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
     padding: 5, // border thickness
     borderRadius: 34,
-    top:10
+    top:20
   },
 
   /** Actual button */

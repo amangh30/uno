@@ -4,12 +4,21 @@ import {
   TouchableOpacity,
   ImageBackground,
   StyleSheet,
+  BackHandler,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
+import { useEffect } from "react";
 
 export default function Index() {
   const router = useRouter();
+  useEffect(() => {
+  const handler = BackHandler.addEventListener("hardwareBackPress", () => {
+    return true;
+  });
+
+  return () => handler.remove();
+}, []);
 
   return (
     <View style={styles.container}>
